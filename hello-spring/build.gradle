@@ -1,0 +1,49 @@
+plugins {
+	id 'org.springframework.boot' version '2.6.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	//dependencies의 라이브러리를 다운받는
+	//공개된 사이트인 mavenCentral를 통해 다운받아옴
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf' //템플릿 엔진
+	implementation 'org.springframework.boot:spring-boot-starter-web'		//웹프로젝트 선택한것
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'	//기본적으로 들어가는 라이브러리
+	/*
+	gradle, maven같은 빌드 툴들은 의존관계가 있는 라이브러리를 함께 다운로드한다.
+	spring-boot-starter-web을 땡겨오면, 이 라이브러리가 의존하고 있는 모든 라이버러리를 땡겨오게됨.
+	그러다보니 스프링부트 라이브러리를 쓰면 스프링코어까지 다 땡겨서 돌아가는 식임
+	
+	스프링 부트 주요 라이브러리
+	spring-boot-starter-web
+	 - spring-boot-starter-tomcat : 톰켓(웹서버)
+	 - spring-webmvd : 스프링 웹 MVC
+	spring-boot-starter-thymeleaf : 타임리프 템플릿 엔진(View)
+	spring-boot-starter(공통) : 스프링 부트 + 스프링 코어 + 로깅
+	 - spring-boot
+	  - spring-colre
+	 -spring-boot-starter-logging
+	  - logback, slf4j(로깅관리 표준으로 사용함)
+	
+	스트링 부트 테스트 라이브러리
+	 - spring-boot-starter-test
+	  - junit : 테스트 프레임워크
+	  - mockito : 목 라이브러리
+	  - assertj : 테스트 코드를 좀 더 편하게 작성하게 도와주는 라이브러리
+	  - spring-test : 스프링 통합 테스트 지원
+
+	*/
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}

@@ -1,0 +1,18 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+ <title>static content</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<!-- 1. 웹브라우저 locallhost:8080/hello-static.html -->
+<!-- 2. 내장 톰켓 서버가 요청을 받아 스프링 컨테이너에 우선 hello-static관련 컨트롤러를 찾음 -->
+<!-- 스프링 컨테이너의 컨트롤러가 우선순위를 갖는다. -->
+<!-- 그 이후 스프링부트가 컨트롤러를 찾지 못하면 리소스의 static/hello-static/html을 찾아 화면에 출력해준다. -->
+정적 컨텐츠 입니다.
+<!-- MVC패턴 - Model, view, control -->
+<!-- View : 화면에 관련된 일 -->
+<!-- control 비지니스 로직, 서버, 백엔드 단 -->
+<!-- model : 모델에 관련된 화면에 필요한것들을 담아 화면에 넘겨주는 패턴-->
+</body>
+</html>

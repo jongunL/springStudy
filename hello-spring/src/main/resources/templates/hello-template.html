@@ -1,0 +1,9 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!-- 여기가 View -->
+<!-- hello! empty 없어도됨 -->
+<!-- 타임리프 탬플릿의 장점 -> html을 그대로 쓰고 서버없이 파일을 열어봐도 겉내용물을 볼 수 있음 -->
+<!-- 템플릿 엔진으로써 동작을 하면 'hello ' + ${name}의 값이 hello! empty로 치환이 됨-->
+<!-- font단 markup하는 사람들이 확인용? 으로 작성하는 란과 같음 -->
+<p th:text="'hello ' + ${name}">hello! empty</p>
+</body>
